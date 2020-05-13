@@ -126,7 +126,19 @@ This model is used as a method for admins or Pixelcat Productions Employees to b
 }
 ```
 
+#### updatepos
 
+This broadcast is used to indicate that the POS should be updated, either because prices, payment methods or products have been updated.
+
+```json
+{
+	"type": "broadcast",
+	"result": {
+		"message": "updatepos",
+		"parameters": {}
+	}
+}
+```
 
 ## Commands
 
@@ -258,7 +270,7 @@ With `registerdevice` you register a new device or updates the last ping with th
 
 ### listtransactions
 
-With `listtransactions` you retrieve all transactions of the `POSID`
+With `listtransactions` you retrieve all transactions of the `POSID`.
 
 !> This command contains required parameters: `POSID`
 
