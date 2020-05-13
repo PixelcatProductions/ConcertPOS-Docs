@@ -56,7 +56,7 @@ Sending to the Gateway is relatively easy. All requests should be json encoded w
 
 We use several models for sending commands to simplify the processing and understanding.
 
-### Product 
+#### Product 
 
 ```json
 {
