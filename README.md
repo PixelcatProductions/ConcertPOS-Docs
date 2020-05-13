@@ -214,7 +214,7 @@ With `listproducts` you retrieve all assigned products for the (`POSID`) Point o
 
 ### payitems
 
-With `payitems` you create new transactions for each item in `Products` using the Payment Method `PaymentMethod` in `POS`
+With `payitems` you create new transactions for each item in `Products` using the Payment Method `PaymentMethod` in `POSID`
 
 
 !> This command contains required parameters: `POSID`,`Products` (array),`PaymentMethod`
@@ -241,6 +241,7 @@ For more infos about the Product model, please refer to [this page](#product).
 ### registerdevice
 
 With `registerdevice` you register a new device or updates the last ping with the designated `UUID`.
+
 !> This command contains required parameters: `UUID`
 
 
@@ -250,6 +251,26 @@ With `registerdevice` you register a new device or updates the last ping with th
 	"parameters": {
 		"api_key": "YOUR_API_KEY",
 		"UUID": "13e12ff5-c853-4049-acbc-b1307c00691d"
+	}
+}
+```
+
+
+### listtransactions
+
+With `listtransactions` you retrieve all transactions of the `POSID`
+
+!> This command contains required parameters: `POSID`
+?> Some parameters are optional: `Limit` if not specified, all transactions will be displayed by default
+
+
+```json
+{
+	"command": "listtransactions",
+	"parameters": {
+		"api_key": "YOUR_API_KEY",
+		"Limit": 50,
+		"POSID": 1
 	}
 }
 ```
