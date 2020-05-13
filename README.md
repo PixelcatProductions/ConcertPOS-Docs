@@ -261,6 +261,7 @@ With `registerdevice` you register a new device or updates the last ping with th
 With `listtransactions` you retrieve all transactions of the `POSID`
 
 !> This command contains required parameters: `POSID`
+
 ?> Some parameters are optional: `Limit` if not specified, all transactions will be displayed by default
 
 
