@@ -267,6 +267,70 @@ With `registerdevice` you register a new device or updates the last ping with th
 }
 ```
 
+### version
+
+With `version` you get the latest version string of the server.
+
+
+
+Request:
+
+```json
+{
+	"command": "version",
+	"parameters": {
+		"api_key": "YOUR_API_KEY",
+	}
+}
+```
+
+Response:
+
+```json
+{
+	"type": "event",
+	"result": {
+		"event": "version",
+		"parameters": {
+			"Version": "1.0.1"
+		}
+	}
+}
+```
+
+
+### getstatus
+
+With `getstatus` you pull the latest status info from https://status.pixelcatproductions.net/api/v1/status
+
+
+
+Request:
+
+```json
+{
+	"command": "getstatus",
+	"parameters": {
+		"api_key": "YOUR_API_KEY",
+	}
+}
+```
+
+Response:
+
+```json
+{
+	"type": "event",
+	"result": {
+		"event": "getstatus",
+		"parameters": {
+			"status": "success",
+			"message": "All systems are operational"
+		}
+	}
+}
+```
+
 
 ### listtransactions
 
@@ -277,6 +341,7 @@ With `listtransactions` you retrieve all transactions of the `POSID`.
 ?> Some parameters are optional: `Limit` if not specified, all transactions will be displayed by default
 
 
+Request:
 ```json
 {
 	"command": "listtransactions",
@@ -284,6 +349,61 @@ With `listtransactions` you retrieve all transactions of the `POSID`.
 		"api_key": "YOUR_API_KEY",
 		"Limit": 50,
 		"POSID": 1
+	}
+}
+```
+
+Response:
+
+```json
+{
+	"type": "event",
+	"result": {
+		"event": "listtransactions",
+		"parameters": {
+			"Count": 4,
+			"Transactions": [{
+				"ID": 9215,
+				"Payment_ID": 1,
+				"PointOfSaleID": 1,
+				"Product_ID": 1,
+				"AmountProduct": 1,
+				"AmountMoney": 18,
+				"timestamp": "2020-05-13T15:27:02.000Z",
+				"hash": "2ac3078aabce35508db346eb699b8688d6c59a376c46648d3b5108a05294b1f0ca274ecd01e63a09356afc5670751e585beb48823ef1eca6a7897b2455d218c0",
+				"Note": null
+			}, {
+				"ID": 9195,
+				"Payment_ID": 1,
+				"PointOfSaleID": 1,
+				"Product_ID": 15,
+				"AmountProduct": 1,
+				"AmountMoney": -1,
+				"timestamp": "2020-05-09T15:46:47.000Z",
+				"hash": "075175167e14f3ea94108fdf903b5b8cd6444027b40cd28ecabec958a548fb5c5f59a305868520a7b07074ca39f8f49a5f2fac40d6fe03e5ed23afdab6292bb3",
+				"Note": null
+			}, {
+				"ID": 9194,
+				"Payment_ID": 1,
+				"PointOfSaleID": 1,
+				"Product_ID": 36,
+				"AmountProduct": 1,
+				"AmountMoney": 10,
+				"timestamp": "2020-05-09T15:46:47.000Z",
+				"hash": "e73f7df42de8218bd00f3df7fb99d90d38beaaf31f89fff4c8819804239a2b09d883ecbd325f846b960afbfdf66436f45722bb5acb10c21472d6764be393ae54",
+				"Note": null
+			}, {
+				"ID": 9188,
+				"Payment_ID": 1,
+				"PointOfSaleID": 1,
+				"Product_ID": 1,
+				"AmountProduct": 5,
+				"AmountMoney": 90,
+				"timestamp": "2020-05-08T23:17:07.000Z",
+				"hash": "242c3d6372b415e6c6b35e1c31600297e9adb8990b48c45c6e6446d4629f4482231a4b6a57160ee6da9c3be0b66eaef02fbc158d7e8fedffaf678e2afee494b0",
+				"Note": null
+			}]
+		}
 	}
 }
 ```
