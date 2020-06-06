@@ -147,6 +147,8 @@ Commands are the way to communicate with the gateway. Without them no changes to
 
 ### getconfig
 
+!> Rate Limit Properties: +25/100 [per request] [30 seconds]
+
 With `getconfig` you can retrieve all they key/value configuration of your instance.
 
 ```json
@@ -160,6 +162,8 @@ With `getconfig` you can retrieve all they key/value configuration of your insta
 
 
 ### getdeposit
+
+!> Rate Limit Properties: +10/100 [per request] [30 seconds]
 
 With `getdeposit` you can retrieve the price for your deposit product.
 
@@ -176,6 +180,8 @@ With `getdeposit` you can retrieve the price for your deposit product.
 
 ### getlicense
 
+!> Rate Limit Properties: +4/100 [per request] [30 seconds]
+
 With `getlicense` you retrieve latest licensing info from your instance using the K/V Config license_key.
 
 
@@ -191,6 +197,8 @@ With `getlicense` you retrieve latest licensing info from your instance using th
 ```
 
 ### listpm
+
+!> Rate Limit Properties: +20/100 [per request] [30 seconds]
 
 With `listpm` you retrieve all Payment Methods for the (`POSID`) Point of sale.
 
@@ -209,6 +217,8 @@ With `listpm` you retrieve all Payment Methods for the (`POSID`) Point of sale.
 
 ### listproducts
 
+!> Rate Limit Properties: +25/100 [per request] [30 seconds]
+
 With `listproducts` you retrieve all assigned products for the (`POSID`) Point of sale.
 
 
@@ -225,6 +235,8 @@ With `listproducts` you retrieve all assigned products for the (`POSID`) Point o
 ```
 
 ### payitems
+
+!> Rate Limit Properties: +1/100 [per request] [30 seconds]
 
 With `payitems` you create new transactions for each item in `Products` using the Payment Method `PaymentMethod` in `POSID`
 
@@ -252,6 +264,8 @@ For more infos about the Product model, please refer to [this page](#product).
 
 ### registerdevice
 
+!> Rate Limit Properties: +10/100 [per request] [30 seconds]
+
 With `registerdevice` you register a new device or updates the last ping with the designated `UUID`.
 
 !> This command contains required parameters: `UUID`
@@ -268,6 +282,8 @@ With `registerdevice` you register a new device or updates the last ping with th
 ```
 
 ### version
+
+!> Rate Limit Properties: +50/100 [per request] [30 seconds]
 
 With `version` you get the latest version string of the server.
 
@@ -301,6 +317,9 @@ Response:
 
 ### getstatus
 
+
+!> Rate Limit Properties: +15/100 [per request] [30 seconds]
+
 With `getstatus` you pull the latest status info from https://status.pixelcatproductions.net/api/v1/status
 
 
@@ -333,6 +352,8 @@ Response:
 
 
 ### listtransactions
+
+!> Rate Limit Properties: +2/100 [per request] [30 seconds]
 
 With `listtransactions` you retrieve all transactions of the `POSID`.
 
