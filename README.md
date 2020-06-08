@@ -29,11 +29,11 @@ Available shards: `exon,cyton,zeus`
 Connect to one of the gateways by using the connection url with the shard as a prefix
 
 
-`wss://shard-{Shard}.ws.concertpos.com/INSTANCE_SLUG` 
+`wss://shard-{Shard}.ws.concertpos.com/?instance=INSTANCE_SLUG&Content-Type=json` 
 
 e.g.
 
-`wss://shard-exon.ws.concertpos.com/INSTANCE_SLUG`
+`wss://shard-exon.ws.concertpos.com/?instance=INSTANCE_SLUG&Content-Type=json`
 
 Where `INSTANCE_SLUG` is the slug of your ConcertPOS instance
 
@@ -71,6 +71,9 @@ All requests should contain the api_key parameter, else your request will be blo
 ## Receive/Handle Data
 
 Handling data is as easy as sending ones, the result will always be in JSON and contains a few model with their corresponding templates below.
+
+!> We support multiple response interfaces such as JSON (default). Those can be defined using the Content-Type=json parameter
+The following options are supported: json, json5
 
 ### Command Model
 
